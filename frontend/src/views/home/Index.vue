@@ -4,14 +4,10 @@
       <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
         <div>
           <p class="uppercase tracking-widest text-sm">Welcome Back</p>
-          <h1 class="mt-2 text-3xl font-bold">学生信息管理驾驶舱</h1>
+          <h1 class="mt-2 text-3xl font-bold">学生信息管理系统</h1>
           <p class="mt-2 text-primary-content/80">
             快速浏览系统概况，查看近期更新，并在左侧导航进入具体模块。
           </p>
-        </div>
-        <div class="rounded-2xl bg-white/15 p-4 text-center">
-          <p class="text-4xl font-bold">{{ summary.totalModules }}</p>
-          <p class="text-sm uppercase tracking-wide">可用模块</p>
         </div>
       </div>
     </div>
@@ -58,7 +54,7 @@
 </template>
 
 <script setup>
-import { computed, ref, onMounted } from "vue";
+import { ref, onMounted } from "vue";
 import { RouterLink } from "vue-router";
 import http from "@/api/http";
 
@@ -75,10 +71,6 @@ const shortcuts = [
   { title: "任务安排", desc: "跟踪待办任务与截止时间", path: "/tasks" },
   { title: "意见反馈", desc: "收集并回复用户反馈", path: "/feedback" },
 ];
-
-const summary = computed(() => ({
-  totalModules: 10,
-}));
 
 onMounted(load);
 </script>
